@@ -1,12 +1,8 @@
 import React from 'react';
 import SmallCard from './SmallCard';
+import Nft from './pruebaNft'
 
-let productInDataBase = {
-    color:   "primary",
-    titulo: "Movies in Data Base",
-    valor: 21,
-    icono: "fas fa-film",
-}
+let productInDataBase = <Nft />
 
 let amount ={
     color:   "success",
