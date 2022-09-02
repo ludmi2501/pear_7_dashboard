@@ -1,8 +1,8 @@
 import React from 'react';
 import image from '../assets/images/pear1.png';
-import CategoryInDb from './CategoryInDb';
+/* import CategoryInDb from './CategoryInDb';
 import NftList from './NftList'
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom'; */
 
 function SideBar(){
     return(

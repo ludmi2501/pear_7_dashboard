@@ -1,7 +1,7 @@
 //Trabajando con componentes de estado - Clases
 //Apis  - Eventos
 import React, {Component} from 'react';
-import NftList from './NftList';
+/* import NftList from './NftList'; */
 
 import PruebaNft from './pruebaNft'
 //Importar nuestro componente
@@ -21,8 +21,8 @@ class NftPrueba extends Component{
             return respuesta.json()
         })
         .then(nft =>{
-            console.log(nft.counts)
-            this.setState({nft: nft.counts})
+            console.log(nft.count)
+            this.setState({nft: nft.count})
         })
         .catch(error => console.log(error))
 
@@ -30,6 +30,7 @@ class NftPrueba extends Component{
 
 
     render(){
+        console.log("producthola")
         return (
             <React.Fragment>
             {/*<!-- MOVIES LIST -->*/}
@@ -42,8 +43,8 @@ class NftPrueba extends Component{
                         <table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <tbody>
                                 {
-                                    //console.log(this.state.movies)
-                                    this.state.nft.length((product,index)=>{
+                                        this.state.nft.length((product,index)=>{
+                                            console.log("product")
                                         return <PruebaNft  {...product} key={index}  />
                                     })
                                 }
