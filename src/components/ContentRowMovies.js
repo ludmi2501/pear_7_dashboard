@@ -20,7 +20,7 @@ class ContentRowMovies extends Component{
             return respuesta.json()
         })
         .then(nft =>{
-            console.log(nft)
+            /* console.log(nft) */
             this.setState({nft: nft.count})
             this.setState({cat: nft.CategoryCount})            
                 
@@ -32,7 +32,7 @@ class ContentRowMovies extends Component{
             return respuesta.json()
         })
         .then(user =>{
-            console.log(user.meta.total)
+           /*  console.log(user.meta.total) */
             this.setState({user: user.meta.total})
                      
                 
@@ -44,7 +44,7 @@ class ContentRowMovies extends Component{
     
 
     render(){
-        console.log(this.state.nft);
+       /*  console.log(this.state.nft); */
 
         let productInDataBase = {
             color:   "primary",

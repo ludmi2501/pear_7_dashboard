@@ -1,8 +1,56 @@
-import React from 'react';
-import imagenFondo from '../assets/images/mandalorian.jpg';
+import React, {Component} from 'react';
 import GenresInDb from './CategoryInDb';
 import ContentRowMovies from './ContentRowMovies';
-function ContentRowTop(){
+
+class ContentRowTop extends Component{
+
+	constructor(){
+        super()
+        this.state ={
+            nft : []
+        }
+    }
+    //Compomentes Ciclo de vida - Montar - Actualizar - Desmontar
+    //Montaje
+    componentDidMount(){
+        fetch('/api/nft/last')
+        .then(respuesta =>{
+            return respuesta.json()
+        })
+        .then(nftLast =>{
+           /*  console.log(nftLast.data[0].description)
+			console.log(nftLast.data[0].image) */
+            this.setState({image: nftLast.data[0].image})
+            this.setState({description: nftLast.data[0].description})            
+                
+        })
+        .catch(error => {console.log(error)})
+
+       
+
+    }
+
+	render(){
+
+		let imagenFondo2
+		let imagen2 = "/img/images/" + this.state.image
+		let description3 = "NFT Description: " + this.state.description
+
+		let description2
+
+		if(this.state.image === ""){
+			imagenFondo2 = <h3>Cargando......</h3>
+		} else {
+			imagenFondo2 = <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={imagen2} alt=" Star Wars - Mandalorian "/>
+		}
+		
+
+		if (this.state.description === ""){
+			description2 = <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa citationem ratione aperiam voluptatum non corporis ratione aperiam voluptatum quae dolorem culpa ratione aperiam voluptatum?</p>
+		} else {
+			description2 = <p> {description3} </p>
+		}
+
     return(
         <React.Fragment>
 				{/*<!-- Content Row Top -->*/}
@@ -22,13 +70,15 @@ function ContentRowTop(){
 						<div className="col-lg-6 mb-4">
 							<div className="card shadow mb-4">
 								<div className="card-header py-3">
-									<h5 className="m-0 font-weight-bold text-gray-800">Last movie in Data Base</h5>
+									<h5 className="m-0 font-weight-bold text-gray-800">Last NFT in Data Base</h5>
 								</div>
 								<div className="card-body">
 									<div className="text-center">
-										<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={imagenFondo} alt=" Star Wars - Mandalorian "/>
+										{/* <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={imagenFondo} alt=" Star Wars - Mandalorian "/> */}
+										{imagenFondo2}
 									</div>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa citationem ratione aperiam voluptatum non corporis ratione aperiam voluptatum quae dolorem culpa ratione aperiam voluptatum?</p>
+									{/* <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa citationem ratione aperiam voluptatum non corporis ratione aperiam voluptatum quae dolorem culpa ratione aperiam voluptatum?</p> */}
+									{description2}
 									<a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
 								</div>
 							</div>
@@ -45,6 +95,7 @@ function ContentRowTop(){
 
         </React.Fragment>
     )
+	}
 
 }
 export default ContentRowTop;
