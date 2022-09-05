@@ -15,7 +15,7 @@ class ContentRowMovies extends Component{
     //Compomentes Ciclo de vida - Montar - Actualizar - Desmontar
     //Montaje
     componentDidMount(){
-        fetch('/api/nft')
+        fetch('http://pearnft.shop/api/nft')
         .then(respuesta =>{
             return respuesta.json()
         })
@@ -27,7 +27,7 @@ class ContentRowMovies extends Component{
         })
         .catch(error => {console.log(error)})
 
-        fetch('/api/user')
+        fetch('http://pearnft.shop/api/user')
         .then(respuesta =>{
             return respuesta.json()
         })

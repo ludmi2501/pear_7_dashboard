@@ -15,7 +15,7 @@ class Nft extends Component{
     //Compomentes Ciclo de vida - Montar - Actualizar - Desmontar
     //Montaje
     componentDidMount(){
-        fetch('/api/nft')
+        fetch('http://pearnft.shop/api/nft')
         .then(respuesta =>{
             return respuesta.json()
         })

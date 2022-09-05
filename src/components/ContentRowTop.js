@@ -13,7 +13,7 @@ class ContentRowTop extends Component{
     //Compomentes Ciclo de vida - Montar - Actualizar - Desmontar
     //Montaje
     componentDidMount(){
-        fetch('/api/nft/last')
+        fetch('http://pearnft.shop/api/nft/last')
         .then(respuesta =>{
             return respuesta.json()
         })
@@ -33,7 +33,7 @@ class ContentRowTop extends Component{
 	render(){
 
 		let imagenFondo2
-		let imagen2 = "/img/images/" + this.state.image
+		let imagen2 = "http://pearnft.shop/img/images/" + this.state.image
 		let description3 = "NFT Description: " + this.state.description
 
 		let description2
@@ -79,7 +79,7 @@ class ContentRowTop extends Component{
 									</div>
 									{/* <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa citationem ratione aperiam voluptatum non corporis ratione aperiam voluptatum quae dolorem culpa ratione aperiam voluptatum?</p> */}
 									{description2}
-									<a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
+									<a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View NFT detail</a>
 								</div>
 							</div>
 						</div>

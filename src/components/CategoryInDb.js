@@ -15,7 +15,7 @@ class CategoryInDb extends Component{
     //Compomentes Ciclo de vida - Montar - Actualizar - Desmontar
     //Montaje
     componentDidMount(){
-        fetch('/api/category')
+        fetch('http://pearnft.shop/api/category')
         .then(respuesta =>{
             return respuesta.json()
         })
