@@ -50,7 +50,7 @@ class ContentRowMovies extends Component{
             color:   "primary",
             titulo: "NFT in Data Base",
             valor: this.state.nft,
-            icono: "fas fa-film",
+            icono: "fas fa-photo-video",
             }
         
             let amount ={
