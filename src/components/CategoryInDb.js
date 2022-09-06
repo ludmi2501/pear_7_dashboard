@@ -30,7 +30,7 @@ class CategoryInDb extends Component{
 
     fondo(){
         let fondoCaja = document.querySelector('.fondoCaja');
-        fondoCaja.classList.toggle('bg-secondary');
+        /* fondoCaja.classList.toggle('bg-secondary'); */
     }
 
 
