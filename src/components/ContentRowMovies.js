@@ -57,7 +57,7 @@ class ContentRowMovies extends Component{
             color:   "success",
             titulo: "Category in Data BASE",
             valor: this.state.cat,
-            icono: "fas fa-award",
+            icono: "far fa-bookmark",
             }
         
             let user = {
